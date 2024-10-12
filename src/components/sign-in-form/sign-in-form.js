@@ -3,7 +3,7 @@ import './sign-in-form.scss';
 
 import { useState } from "react";
 import Button from "../button/button";
-import {createUserDocumentFromAuth, signInWithGooglePopup, signInAuthUserWithEmailAndPassword} from "../../utils/firebase/firebase";
+import { signInWithGooglePopup, signInAuthUserWithEmailAndPassword} from "../../utils/firebase/firebase";
 
 const defaultFormFields = {
     email: '',
@@ -23,14 +23,13 @@ const SignInForm = () => {
     }
 
     const signInWithGoogle = async () => {
-        const {user} = await signInWithGooglePopup();
-        const userDocRef = createUserDocumentFromAuth(user);
+        await signInWithGooglePopup();
     }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await signInAuthUserWithEmailAndPassword(email, password);
+            await signInAuthUserWithEmailAndPassword(email, password);
             resetFormFields();
         } catch(error) {
             switch (error.code) {
