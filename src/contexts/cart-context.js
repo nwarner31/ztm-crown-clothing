@@ -1,5 +1,4 @@
 import { createContext, useState } from "react";
-import cartItem from "../components/cart-item/cart-item";
 
 
 

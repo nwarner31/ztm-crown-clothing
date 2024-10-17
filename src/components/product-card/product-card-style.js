@@ -1,4 +1,7 @@
-.product-card-container {
+import styled from "styled-components";
+
+
+export const ProductCardContainer = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -12,7 +15,7 @@
     object-fit: cover;
     margin-bottom: 5px;
   }
-
+  
   button {
     width: 80%;
     opacity: 0.7;
@@ -20,7 +23,7 @@
     top: 255px;
     display: none;
   }
-
+  
   &:hover {
     img {
       opacity: 0.8;
@@ -30,8 +33,9 @@
       display: flex;
     }
   }
+`;
 
-  .footer {
+export const Footer = styled.div`
     width: 100%;
     height: 5%;
     display: flex;
@@ -45,5 +49,4 @@
     .price {
       width: 10%;
     }
-  }
-}
+`;
